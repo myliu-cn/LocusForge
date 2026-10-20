@@ -1,0 +1,8 @@
+{
+  "name": "courtyard",
+  "license": "CC0-1.0",
+  "generator": "seed_scenes.py",
+  "blender_version": "4.5.3 LTS",
+  "thumbnail": "actual Cycles render",
+  "third_party_assets": false
+}

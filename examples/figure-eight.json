@@ -1,0 +1,28 @@
+{
+  "name": "Courtyard / figure-eight revisit",
+  "scene_id": "courtyard",
+  "trajectory": {
+    "kind": "figure_eight",
+    "center": [0, -5.8],
+    "radius": 3.5,
+    "aspect": 0.75,
+    "height": 1.7,
+    "phase_deg": 0,
+    "heading": "forward"
+  },
+  "capture": {
+    "width": 320,
+    "height": 180,
+    "fps": 4,
+    "duration_seconds": 20,
+    "samples": 8,
+    "engine": "CYCLES",
+    "device": "CPU",
+    "purpose": "preview"
+  },
+  "quality": {
+    "min_gap_seconds": 8,
+    "min_excursion_m": 3,
+    "min_overlap": 0.8
+  }
+}

@@ -1,0 +1,31 @@
+services:
+  studio:
+    build: .
+    init: true
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8765:8765"
+    environment:
+      LOCUS_API_TOKEN: "${LOCUS_API_TOKEN:?Set a strong API token before starting a non-loopback server}"
+      LOCUS_TRUSTED_HOSTS: "${LOCUS_TRUSTED_HOSTS:-localhost,127.0.0.1}"
+      LOCUS_ALLOWED_ORIGINS: "${LOCUS_ALLOWED_ORIGINS:-http://localhost:8765,http://127.0.0.1:8765}"
+      LOCUS_RENDER_THREADS: "4"
+      LOCUS_EMBEDDED_WORKER: "true"
+      LOCUS_JOB_TIMEOUT_SECONDS: "21600"
+      FORWARDED_ALLOW_IPS: "${FORWARDED_ALLOW_IPS:-127.0.0.1}"
+    volumes:
+      - locus-data:/data
+    read_only: true
+    tmpfs:
+      - /tmp:size=2147483648,mode=1777
+    mem_limit: 8g
+    cpus: 4.0
+    pids_limit: 256
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 30s
+
+volumes:
+  locus-data:

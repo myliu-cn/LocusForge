@@ -1,0 +1,57 @@
+# Local environments and downloaded runtimes
+/.venv/
+/venv/
+/.conda/
+/.tools/
+node_modules/
+
+# Private configuration and credentials
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+.netrc
+.pypirc
+
+# Captures, uploaded assets, databases and task logs
+/data/
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+*.log
+
+# Reproducible build output and Python metadata
+/web/dist/
+/src/locusforge/static/
+build/
+dist/
+*.egg-info/
+__pycache__/
+*.py[cod]
+*.tsbuildinfo
+
+# Test, lint and coverage caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.coverage
+.coverage.*
+coverage/
+htmlcov/
+test-results/
+playwright-report/
+
+# Machine-specific editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~

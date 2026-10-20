@@ -1,0 +1,28 @@
+{
+  "name": "Courtyard / no-roll look waypoints",
+  "scene_id": "courtyard",
+  "trajectory": {
+    "kind": "orbit",
+    "radius": 5.5,
+    "height": 1.7,
+    "phase_deg": 225,
+    "heading": "forward",
+    "closed": true,
+    "orientation_keyframes": [
+      { "at": 0, "yaw_deg": 0, "pitch_deg": -10 },
+      { "at": 0.25, "yaw_deg": 30, "pitch_deg": 8 },
+      { "at": 0.5, "yaw_deg": -40, "pitch_deg": -15 },
+      { "at": 0.75, "yaw_deg": 20, "pitch_deg": -5 }
+    ]
+  },
+  "capture": {
+    "width": 320,
+    "height": 180,
+    "fps": 4,
+    "duration_seconds": 24,
+    "samples": 8,
+    "engine": "CYCLES",
+    "device": "CPU",
+    "purpose": "preview"
+  }
+}

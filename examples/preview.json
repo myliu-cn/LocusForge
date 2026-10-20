@@ -1,0 +1,30 @@
+{
+  "name": "Courtyard / CPU verification",
+  "scene_id": "courtyard",
+  "trajectory": {
+    "kind": "orbit",
+    "center": [0, 0],
+    "radius": 5.5,
+    "height": 1.7,
+    "phase_deg": 225,
+    "heading": "target",
+    "target": [0, 0, 1.3]
+  },
+  "capture": {
+    "width": 320,
+    "height": 180,
+    "fps": 4,
+    "duration_seconds": 12,
+    "samples": 8,
+    "engine": "CYCLES",
+    "device": "CPU",
+    "purpose": "preview",
+    "seed": 42
+  },
+  "quality": {
+    "min_gap_seconds": 5,
+    "min_excursion_m": 3,
+    "min_overlap": 0.8,
+    "max_departure_overlap": 0.35
+  }
+}

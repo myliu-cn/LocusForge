@@ -1,0 +1,31 @@
+name: Validate contracts
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  contracts:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        shell: bash -el {0}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          miniforge-version: latest
+          environment-file: environment.yml
+          activate-environment: locusforge
+          auto-activate-base: false
+      - run: python -m pip check
+      - run: ruff check src tests scripts
+      - run: mypy src/locusforge --exclude blender
+      - run: pytest -m "not renderer" -q
+      - run: npm --prefix web ci --no-audit --no-fund
+      - run: npm --prefix web run lint
+      - run: npm --prefix web run test
+      - run: npm --prefix web run build

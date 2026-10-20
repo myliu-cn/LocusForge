@@ -1,0 +1,23 @@
+name: locusforge
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.12
+  - pip>=25
+  - nodejs=24
+  - libgcc-ng
+  - libstdcxx-ng
+  - xorg-libx11
+  - xorg-libxfixes
+  - xorg-libxi
+  - xorg-libxrender
+  - xorg-libxxf86vm
+  - xorg-libsm
+  - xorg-libice
+  - libxkbcommon
+  - libegl
+  - libgl
+  - pip:
+      - -r requirements.lock
+      - -e .

@@ -1,0 +1,31 @@
+{
+  "name": "Courtyard / composable motion and lens",
+  "scene_id": "courtyard",
+  "trajectory": {
+    "kind": "program",
+    "start": [-4, -4, 1.7],
+    "start_yaw_deg": 0,
+    "closed": true,
+    "heading": "forward",
+    "segments": [
+      { "kind": "move", "direction": "forward", "distance_m": 4, "weight": 1 },
+      { "kind": "move", "direction": "right", "distance_m": 3, "weight": 1 },
+      { "kind": "move", "direction": "backward", "distance_m": 4, "weight": 1 },
+      { "kind": "move", "direction": "left", "distance_m": 3, "weight": 1 }
+    ],
+    "orientation_keyframes": [
+      { "at": 0.3, "yaw_deg": 20, "pitch_deg": -5 },
+      { "at": 0.7, "yaw_deg": -20, "pitch_deg": 0 }
+    ]
+  },
+  "capture": {
+    "width": 320,
+    "height": 180,
+    "fps": 4,
+    "duration_seconds": 32,
+    "samples": 8,
+    "engine": "CYCLES",
+    "device": "CPU",
+    "purpose": "preview"
+  }
+}

@@ -1,0 +1,32 @@
+[Unit]
+Description=LocusForge dataset studio
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=locusforge
+Group=locusforge
+WorkingDirectory=/opt/locusforge
+EnvironmentFile=/etc/locusforge/environment
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=HOME=/tmp
+Environment=PATH=/opt/conda/envs/locusforge/bin:/usr/bin:/bin
+Environment=LOCUS_BLENDER=/opt/conda/envs/locusforge/bin/blender
+ExecStart=/opt/conda/envs/locusforge/bin/locusforge serve
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+KillMode=control-group
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/locusforge
+MemoryMax=8G
+TasksMax=256
+CPUQuota=400%
+
+[Install]
+WantedBy=multi-user.target
